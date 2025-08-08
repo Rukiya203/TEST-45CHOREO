@@ -1,0 +1,21 @@
+{
+  "name": "test-choreo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rukiya203/TEST-45CHOREO.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rukiya203/TEST-45CHOREO/issues"
+  },
+  "homepage": "https://github.com/Rukiya203/TEST-45CHOREO#readme"
+}
