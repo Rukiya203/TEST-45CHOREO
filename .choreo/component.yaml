@@ -1,0 +1,13 @@
+# .choreo/component.yaml
+schemaVersion: 1.2
+
+endpoints:
+  - name: nodejs-api
+    displayName: Node.js API
+    service:
+      basePath: /
+      port: 9090
+    type: REST
+    networkVisibilities:
+      - Public
+    schemaFilePath: openapi.yaml
