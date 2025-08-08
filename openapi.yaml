@@ -1,0 +1,88 @@
+
+openapi: 3.0.0
+info:
+  title: My Simple Node.js API
+  version: 1.0.0
+  description: A minimal HTTP server with /get-data endpoint.
+
+servers:
+  - url: http://127.0.0.1:3000
+    description: Local Development Server
+
+paths:
+  /:
+    get:
+      summary: Home Route
+      description: Returns a plain text welcome message.
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: "Server is running. Use /get-data for JSON response.\n"
+
+  /get-data:
+    get:
+      summary: Get JSON Data
+      description: Returns a sample JSON response.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: ADO ATHAL BN
+              example:
+                message: ADO ATHAL BN
+
+  "/{path}":
+    x-swagger-router-controller: catch-all
+    parameters:
+      - name: path
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Catch All - Not Found
+      responses:
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: "Not Found\n"
+    post:
+      responses:
+        '405':
+          description: Method Not Allowed
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: "Method Not Allowed\n"
+    put:
+      responses:
+        '405':
+          description: Method Not Allowed
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: "Method Not Allowed\n"
+    delete:
+      responses:
+        '405':
+          description: Method Not Allowed
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: "Method Not Allowed\n"
